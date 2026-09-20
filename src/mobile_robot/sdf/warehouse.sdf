@@ -2,10 +2,10 @@
 <sdf version="1.9">
   <world name="warehouse_world">
 
-    <plugin filename="gz-sim-physics-system"          name="gz::sim::systems::Physics"/>
-    <plugin filename="gz-sim-user-commands-system"    name="gz::sim::systems::UserCommands"/>
-    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
-    <plugin filename="gz-sim-contact-system"          name="gz::sim::systems::Contact"/>
+    <plugin filename="ignition-gazebo-physics-system"          name="ignition::gazebo::systems::Physics"/>
+    <plugin filename="ignition-gazebo-user-commands-system"    name="ignition::gazebo::systems::UserCommands"/>
+    <plugin filename="ignition-gazebo-scene-broadcaster-system" name="ignition::gazebo::systems::SceneBroadcaster"/>
+    <plugin filename="ignition-gazebo-contact-system"          name="ignition::gazebo::systems::Contact"/>
 
     <scene>
       <grid>false</grid>
@@ -158,7 +158,7 @@
     </model>
 
     <include>
-      <uri>file:///home/ishan/Documents/ros_mobile_robot/src/mobile_robot/sdf/</uri>
+      <uri>model.sdf</uri>
       <pose>-1 -0.43 0.2 0 0 0</pose>
     </include>
 

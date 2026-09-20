@@ -10,8 +10,6 @@ def generate_launch_description():
     pkg_share = FindPackageShare("mobile_robot")
 
     world_file = PathJoinSubstitution([pkg_share, "sdf", "warehouse.sdf"])
-    rviz_config = PathJoinSubstitution([pkg_share, "config", "rviz.rviz"])
-
     return LaunchDescription([
 
         ExecuteProcess(
