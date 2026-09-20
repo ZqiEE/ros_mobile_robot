@@ -30,8 +30,10 @@ source install/setup.bash
 ros2 launch mobile_robot bringup.launch.py
 ```
 
-The world includes `model.sdf` relative to the installed world file. It no
-longer depends on an absolute path from the original developer machine.
+The launch file adds the package's installed `sdf` directory to
+`IGN_GAZEBO_RESOURCE_PATH`, and the world resolves the robot through its
+`model.config` name (`model://finalassembly_v3`). It no longer depends on an
+absolute path from the original developer machine.
 
 The command and feedback boundary is:
 

@@ -158,7 +158,7 @@
     </model>
 
     <include>
-      <uri>model.sdf</uri>
+      <uri>model://finalassembly_v3</uri>
       <pose>-1 -0.43 0.2 0 0 0</pose>
     </include>
 
