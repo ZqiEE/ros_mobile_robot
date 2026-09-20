@@ -5,10 +5,14 @@ from setuptools import setup, find_packages
 package_name = 'mobile_robot'
 
 
-def package_files(data_files, directory):
+def package_files(data_files, directory, install_directory=None):
     """Recursively add files preserving folder structure"""
     for root, _, files in os.walk(directory):
-        install_path = os.path.join('share', package_name, root)
+        relative_root = os.path.relpath(root, directory)
+        install_path = os.path.join(
+            'share', package_name, install_directory or directory)
+        if relative_root != '.':
+            install_path = os.path.join(install_path, relative_root)
         file_paths = [os.path.join(root, f) for f in files]
 
         if file_paths:
@@ -31,6 +35,8 @@ data_files = [
 ]
 
 data_files = package_files(data_files, 'sdf')
+data_files = package_files(
+    data_files, 'sdf', os.path.join('models', 'finalassembly_v3'))
 
 
 setup(
